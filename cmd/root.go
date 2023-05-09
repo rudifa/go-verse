@@ -9,6 +9,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const version = "v0.1.0"
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "verse",
@@ -19,6 +21,7 @@ In a cobra style application:
 	- cmd/root.go implement the root command
 	- other cmd/*.go files implement subcommands
 	- code that does the actual work goes into pkg/ packages`,
+	Version: version,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -44,7 +47,7 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 
