@@ -13,6 +13,8 @@ Cobra is a CLI library for Go that empowers applications.
 ...
 ```
 
+- recommended: vscode, with extension `Go for Visual Studio Code` installed
+
 - create the project skeleton
 
 ```
@@ -151,6 +153,51 @@ git add .
 verse % git commit -m 'add command future and update help messages'
 ```
 
+- now add a package to which to delegate the actual work for the command `future`
+
+```
+verse % mkdir pkg
+verse % mkdir pkg/future
+verse % touch pkg/future/peek.go
 ```
 
+- add code to `pkg/future/peek.go`
+
+```
+package future
+
+import (
+    "os/exec"
+)
+
+func OpenOpenAIPage() error {
+    cmd := exec.Command("open", "https://openai.com")
+    return cmd.Run()
+}
+```
+
+- in `cmd/future.go` call `future.OpenOpenAIPage()`
+
+```
+    Run: func(cmd *cobra.Command, args []string) {
+        fmt.Println("future called")
+        future.OpenOpenAIPage()
+    },
+```
+
+When you save above change, the vscode go extension inserts for you
+
+```
+import (
+    "fmt"
+    "verse/pkg/future"
+
+    "github.com/spf13/cobra"
+)
+```
+
+- run it and enjoy the view
+
+```
+verse % go run . fut
 ```

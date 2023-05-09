@@ -5,6 +5,7 @@ package cmd
 
 import (
 	"fmt"
+	"verse/pkg/future"
 
 	"github.com/spf13/cobra"
 )
@@ -16,6 +17,7 @@ var futureCmd = &cobra.Command{
 	Long: `Future is now, go for it.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("future called")
+		future.OpenOpenAIPage()
 	},
 }
 
