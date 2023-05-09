@@ -14,10 +14,11 @@ import (
 var futureCmd = &cobra.Command{
 	Use:   "future",
 	Short: "A look into the future",
-	Long: `Future is now, go for it.`,
+	Long:  `Future is now, go for it.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("future called")
 		future.OpenOpenAIPage()
+		future.OpenUzufly()
 	},
 }
 
@@ -32,5 +33,4 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// futureCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
