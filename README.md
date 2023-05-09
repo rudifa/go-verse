@@ -201,3 +201,28 @@ import (
 ```
 verse % go run . fut
 ```
+
+- look yet again at the project structure
+
+```
+verse % tree
+.
+├── cmd
+│   ├── future.go
+│   └── root.go
+├── pkg
+│   └── future
+│       └── peek.go
+├── LICENSE
+├── README.md
+├── go.mod
+├── go.sum
+├── main.go
+└── verse
+```
+
+Normally you don't edit files `go.mod` `go.sum`, managed by the go tools. Their contents reflect the packages imported into the project, directly or as depenedencies.
+
+- commit, create a github repo and push, update LICENSE, ...
+
+There we go.
