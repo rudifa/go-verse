@@ -1,4 +1,4 @@
-module verse
+module github.com/rudifa/verse
 
 go 1.20
 
