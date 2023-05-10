@@ -5,7 +5,8 @@ package cmd
 
 import (
 	"fmt"
-	"verse/pkg/future"
+
+	"github.com/rudifa/verse/pkg/future"
 
 	"github.com/spf13/cobra"
 )
